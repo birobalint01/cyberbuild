@@ -1,0 +1,33 @@
+body {
+    margin-top: 0;
+    margin: 0;
+    padding: 0;
+    color: 'white';
+    background-repeat: no-repeat;
+  }
+
+h2{
+    text-align: center;
+}
+
+.asd{
+    margin-bottom: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px ;
+}
+
+.asd2{
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px ;
+}
+
+.cb{
+    color: aqua;
+}
