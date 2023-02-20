@@ -1,7 +1,10 @@
+import React, { Component } from "react";
+import logo from './images/logoasd.png'
+
 function Header() {
   return (
-    <header style={{backgroundImage: `url(${require('./images/header.jpg')})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', padding: "20px" }}>
-      <h1 className='cb'>CyberBuild</h1>
+    <header>
+      <img className="img" src={logo} alt="My Image" style={{width:"200px" , height:"200px" , display: "block", margin: "auto"}}/>
     </header>
   );
 }
