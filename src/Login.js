@@ -6,7 +6,6 @@ import './App.css';
 function Login() {
   return (
     <div style={{backgroundImage: `url(${require('./images/hatter.jpg')})`, height: '100vh' , backgroundRepeat: 'no-repeat' , backgroundSize: 'cover  '}}>
-      <Header></Header>
       <h1 className='asd' style={{marginBottom:'30px'}}>Login</h1>
       <form className="asd">
         <label className='asd2' htmlFor="email">email</label>
