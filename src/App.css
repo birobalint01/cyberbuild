@@ -38,3 +38,7 @@ h2{
     text-align: center;
     align-items: center;
 }
+
+.dropdown-item {
+    background-color: #36bbe3;
+  }

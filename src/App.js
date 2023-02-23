@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes , Route, Link, Navigate } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
+import MainPage from './Mainpage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/mainpage" element={<MainPage />} />
           <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
       </div>
