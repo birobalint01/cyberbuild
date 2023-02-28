@@ -6,13 +6,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Carousel from 'react-bootstrap/Carousel';
+import { BrowserRouter, Routes , Route, Link, Navigate } from 'react-router-dom';
 
 function MainPage() {
   return (
-    <div style={{backgroundImage: `url(${require('./images/hatter.jpg')})`, height: '100vh' , backgroundRepeat: 'no-repeat' , backgroundSize: 'cover  '}}>
+    <div style={{backgroundImage: `url(${require('./images/hatter.jpg')})`,height: '100%' , backgroundRepeat: 'no-repeat' , backgroundSize: 'cover  '}}>
     <Navbar style={{backgroundColor: "#36bbe3"}} expand="lg">
       <Container fluid >
-        <Navbar.Brand href="#">CyberBuild</Navbar.Brand>
+        <Navbar.Brand>CyberBuild</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,7 +21,7 @@ function MainPage() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="#">Home</Nav.Link>
             <Nav.Link href="#action2">FAQs</Nav.Link>
             <NavDropdown className='dropdown-item' title="Products" id="navbarScrollingDropdown" style={{backgroundColor: '#36bbe3'}}>
               <NavDropdown.Item href="#action4" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
@@ -58,48 +59,120 @@ function MainPage() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    <Carousel>
+
+    <Carousel id="slideCarousel" style={{ maxHeight: "913px", height: "100%" }}>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src={require('./images/header.jpg')}
+          className="d-block w-100 "
+          src={require('./images/cpu.png')}
           alt="First slide"
-          style={{ objectFit: "cover", height: "100%" }}
+          style={{ objectFit: "cover", maxHeight: "913px", height: "100%", width: "100%" }}
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Processzorok</h3>
+          <p>Webshopunk a legmodernebb, legjobb Processzorokkat kínálja eladásra a legkedvezőbb áron. Legyen szó játékról, számítógépes munkáról, vagy szerverekről. Nálunk 
+            megtalálja amit keres.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
+
       <Carousel.Item>
         <img
           className="d-block w-100"
           src={require('./images/rtx.png')}
           alt="Second slide"
-          style={{ objectFit: "cover", height: "100%" }}
+          style={{ objectFit: "cover", maxHeight: "913px", height: "100%", width: "100%" }}
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Videókártyák</h3>
+          <p>Válasszon Videókártyáink széles választékából, nálunk minden célra, legyen az játék, vagy grafikai munka, vagy bányászat, megtalálja amit keres.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={require('./images/ram.png')}
+          alt="Third slide"
+          style={{ objectFit: "cover", maxHeight: "913px", height: "100%", width: "100%" }}
+        />
+
+        <Carousel.Caption>
+          <h3>RAM-ok</h3>
+          <p>
+            Számítógépe sebességének növeléséhez több memóriára lenne szüksége? Ne aggódjon! Nálunk erre is talál megoldást. A leggyorsabb memória modulok széles tárházát 
+            kínáljuk Önnek. 
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={require('./images/rtx.png')}
-          alt="Third slide"
-          style={{ objectFit: "cover", height: "100%" }}
+          src={require('./images/motherb.png')}
+          alt="Fourth slide"
+          style={{ objectFit: "cover", maxHeight: "913px", height: "100%", width: "100%" }}
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Alaplapok.</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Mindennek az alapja a legfontosabb. Válassza ki nálunk számítógépének szívét-lelkét legminőségibb alaplapjaink óriási választékából, legyen Inteles vagy AMD-s 
+            processzora, nálunk mindkettőhöz talál megoldást.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img
+          className="d-block w-100 h-100"
+          src={require('./images/psu.png')}
+          alt="Fifth slide"
+          style={{ objectFit: "cover", maxHeight: "913px", height: "100%", width: "100%" }}
+        />
+
+        <Carousel.Caption>
+          <h3>Tápegységek</h3>
+          <p>
+            Mire jó egy számítógép áram nélkül? Válassza meg bölcsen a tápegységét, remek besorolású tápegységeink garantáltan nem lesznek zárlatosak, és nem fognak 
+            csalódást okozni. 
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={require('./images/case.png')}
+          alt="Sixth slide"
+          style={{ objectFit: "cover", maxHeight: "913px", height: "100%", width: "100%" }}
+        />
+
+        <Carousel.Caption>
+          <h3>Számítógépházak</h3>
+          <p>
+            Van, akinek a stílus sem utolsó szempont, és van, aki az egyszerűséget kedveli. Nálunk mindkét oldalról talál megoldást. RGB-s, sima fekete, és 
+            egyéb más számítógépházaink közül választhatja ki az önnek legmegfelelőbbet, hogy Számítógépe a lehető legjobban nézhessen ki, és még jól is szellőzzön. 
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={require('./images/cooling.png')}
+          alt="Fifth slide"
+          style={{ objectFit: "cover", maxHeight: "913px", height: "100%", width: "100%" }}
+        />
+
+        <Carousel.Caption>
+          <h3>Hűtések</h3>
+          <p>
+            Akármilyen jól is építette meg számítógépét, nem sokat ér, ha percek alatt túlmelegszik. De ne aggódjon! Nálunk erre is talál megoldást. 
+            Legyen szó lég, vagy akár vízhűtésről, mi mindenre kínálunk megoldást, méghozzá kedvező áron.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    
     </div>
     
   );
