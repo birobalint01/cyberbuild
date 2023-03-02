@@ -6,6 +6,14 @@ import Login from './Login';
 import Register from './Register';
 import MainPage from './Mainpage';
 import FAQs from './components/FAQs';
+import CPUs from './components/CPUs';
+import Coolings from './components/Coolings';
+import Cases from './components/Cases'
+import Motherbs from './components/Motherbs';
+import GPUs from './components/GPUs';
+import PSUs from './components/PSUs';
+import RAMs from './components/RAMs';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,6 +32,13 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/mainpage" element={<MainPage />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/cpus" element={<CPUs />} />
+          <Route path="/gpus" element={<GPUs />} />
+          <Route path="/motherbs" element={<Motherbs />} />
+          <Route path="/coolings" element={<Coolings />} />
+          <Route path="/cases" element={<Cases />} />
+          <Route path="/psus" element={<PSUs />} />
+          <Route path="/rams" element={<RAMs />} />
           <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
       </div>

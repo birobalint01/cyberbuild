@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import logo from './images/logoasd.png'
+import logo from './images/logo.png'
 
 function Header() {
   return (
     <header>
-      <img className="img" src={logo} alt="My Image" style={{width:"200px" , height:"200px" , display: "block", margin: "auto"}}/>
+      <img className="img" src={logo} alt="My Image" style={{ maxWidth:'250px', maxHeight: '200px', display: "block", margin: "auto"}}/>
     </header>
   );
 }

@@ -1,14 +1,35 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Carousel from 'react-bootstrap/Carousel';
-import { BrowserRouter, Routes , Route, Link, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes , Route, Link, Navigate, useHistory, useHref } from 'react-router-dom';
+import { useState } from "react";
+import { Button, Offcanvas, Nav } from "react-bootstrap";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 
 function MainPage() {
+
+  const [showCart, setShowCart] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+
+  const handleClose = (type) => {
+    if (type === "cart") {
+      setShowCart(false);
+    } else if (type === "profile") {
+      setShowProfile(false);
+    }
+  };
+
+  const handleShow = (type) => {
+    if (type === "cart") {
+      setShowCart(true);
+    } else if (type === "profile") {
+      setShowProfile(true);
+    }
+  };
+
   return (
     <div style={{backgroundImage: `url(${require('./images/hatter.jpg')})`,height: '100%' , backgroundRepeat: 'no-repeat' , backgroundSize: 'cover  '}}>
     <Navbar style={{backgroundColor: "#36bbe3"}} expand="lg">
@@ -21,28 +42,28 @@ function MainPage() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#action2">FAQs</Nav.Link>
+            <Nav.Link href="/mainpage">Home</Nav.Link>
+            <Nav.Link href="/faqs">FAQs</Nav.Link>
             <NavDropdown className='dropdown-item' title="Products" id="navbarScrollingDropdown" style={{backgroundColor: '#36bbe3'}}>
-              <NavDropdown.Item href="#action4" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <NavDropdown.Item href="/cpus" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
                 CPU
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action5" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <NavDropdown.Item href="/gpus" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
                 GPU
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <NavDropdown.Item href="/rams" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
                 RAM
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <NavDropdown.Item href="/motherbs" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
                 Motherboard
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <NavDropdown.Item href="/psus" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
                 Power Supply
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <NavDropdown.Item href="/coolings" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
                 Cooling
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <NavDropdown.Item href="/cases" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
                 PC Case
               </NavDropdown.Item>
             </NavDropdown>
@@ -58,8 +79,32 @@ function MainPage() {
           </Form>
         </Navbar.Collapse>
       </Container>
+      <Button variant="outline-success" onClick={() => handleShow("cart")}>
+              <FaShoppingCart size={20} />
+            </Button>
+            <Button variant="outline-success ms-2" onClick={() => handleShow("profile")}>
+              <FaUser size={20} />
+            </Button>
+            <Offcanvas show={showCart} onHide={() => handleClose("cart")} placement="end"  style={{ backgroundColor: '#36bbe3', color: 'black'}}> 
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Shopping Cart</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                {/* Add your shopping cart component here */}
+                This is the shopping cart component
+              </Offcanvas.Body>
+            </Offcanvas>
+             <Offcanvas show={showProfile} onHide={() => handleClose("profile")} placement="end"  style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>User Profile</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                {/* Add your profile component here */}
+                This is the Profile component
+              </Offcanvas.Body>
+            </Offcanvas>
     </Navbar>
-
+    
     <Carousel id="slideCarousel" style={{ maxHeight: "913px", height: "100%" }}>
       <Carousel.Item>
         <img
@@ -173,6 +218,8 @@ function MainPage() {
       </Carousel.Item>
     </Carousel>
     
+    
+
     </div>
     
   );

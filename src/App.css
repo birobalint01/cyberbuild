@@ -42,3 +42,7 @@ h2{
 .dropdown-item {
     background-color: #36bbe3;
   }
+
+#d-flex{
+    align-items: center;
+}

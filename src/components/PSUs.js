@@ -4,12 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { BrowserRouter, Routes , Route, Link, Navigate } from 'react-router-dom';
-import Header from '../Header';
 import { useState } from "react";
 import { Button, Offcanvas, Nav } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 
-function FAQs() {
+function PSUs() {
 
   const [showCart, setShowCart] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -42,11 +41,44 @@ function FAQs() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/mainpage" style={{fontWeight : 'bold'}}>Home</Nav.Link>
-        </Nav>
+            <Nav.Link href="/mainpage">Home</Nav.Link>
+            <Nav.Link href="/faqs">FAQs</Nav.Link>
+            <NavDropdown className='dropdown-item' title="Products" id="navbarScrollingDropdown" style={{backgroundColor: '#36bbe3'}}>
+              <NavDropdown.Item href="/cpus" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+                CPU
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/gpus" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+                GPU
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/rams" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+                RAM
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/motherbs" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+                Motherboard
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/psus" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+                Power Supply
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/coolings" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+                Cooling
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/cases" style={{ backgroundColor: '#36bbe3', color: 'black'}}>
+                PC Case
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
         </Navbar.Collapse>
-        </Container>
-        <Button variant="outline-success" onClick={() => handleShow("cart")}>
+      </Container>
+      <Button variant="outline-success" onClick={() => handleShow("cart")}>
               <FaShoppingCart size={20} />
             </Button>
             <Button variant="outline-success ms-2" onClick={() => handleShow("profile")}>
@@ -72,31 +104,11 @@ function FAQs() {
             </Offcanvas>
     </Navbar>
 
-    <Header></Header>
+    
 
-    <h2></h2>
-      <p style={{fontWeight : 'bold'}}>Q: Miről szól az oldalunk?</p>
-      <p style={{fontWeight : 'bold'}}>A: Az oldalunk egy számítástechnikai alkatrészekkel foglalkozó oldal, ahol alkatrészenként, 
-      vagy akár egyben megépítve várásolhatja meg számítógépét.</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: Miért minket válasszon?</p>
-      <p style={{fontWeight : 'bold'}}>A: A piac egyik legkedvezőbb cége vagyunk, 
-      és nálunk akár hozzáértés nélkül is megépítheti számítógépét, hisz rendszerünk mindenben asszisztálni fogja.</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
     </div>
     
   );
 }
 
-export default FAQs;
+export default PSUs;
