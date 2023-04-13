@@ -22,6 +22,11 @@ function MainPage() {
     }
   };
 
+  const logout = (e) => {
+    e.preventDefault()
+    window.location.href = "/login"
+  }
+
   const handleShow = (type) => {
     if (type === "cart") {
       setShowCart(true);
@@ -100,7 +105,7 @@ function MainPage() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                 {/* Add your profile component here */}
-                This is the Profile component
+                <button className='asd1' type="button" style={{marginTop:'15px'}} onClick={logout}>Log Out</button>
               </Offcanvas.Body>
             </Offcanvas>
     </Navbar>
