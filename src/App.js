@@ -3,7 +3,7 @@ import Header from './Header';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes , Route, Link, Navigate } from 'react-router-dom';
 import Login from './Login';
-import Register from './Register';
+import Register from './register';
 import MainPage from './Mainpage';
 import FAQs from './components/FAQs';
 import CPUs from './components/CPUs';

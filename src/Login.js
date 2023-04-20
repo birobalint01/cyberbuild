@@ -28,14 +28,14 @@ function Login() {
 
   return (
     <div style={{ backgroundImage: `url(${require('./images/hatter.jpg')})`, height: '100vh', backgroundRepeat: 'no-repeat', backgroundSize: 'cover  ' }}>
-      <h1 className='asd' style={{ marginBottom: '30px' }}>Login</h1>
+      <h1 className='asd' style={{ marginBottom: '30px' }}>Bejelentkezés</h1>
       <form className="asd">
-        <label className='asd2' htmlFor="email">email</label>
+        <label className='asd2' htmlFor="email">Email</label>
         <input className='asd2' placeholder="youremail@gmail.com" ref={email} id="email" name="email" style={{ width: '250px', height: '20px' }} />
-        <label className='asd2' htmlFor="password">password</label>
+        <label className='asd2' htmlFor="password">Jelszó</label>
         <input className='asd2' type="password" ref={password} placeholder="********" id="password" name="password" style={{ width: '250px', height: '20px' }} />
-        <button className='asd1' type="button" style={{ marginTop: '15px' }} onClick={login}>Log In</button>
-        <Link to='/register' style={{ marginTop: '30px' }}>Don't have an account? Register here.</Link>
+        <button className='asd1' type="button" style={{ marginTop: '15px' }} onClick={login}>Bejelentkezés</button>
+        <Link to='/register' style={{ marginTop: '30px' }}>Nincs felhasználói Fiókja? Kattintson, és hozzon létre egyet!</Link>
       </form>
     </div>
   );
