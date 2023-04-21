@@ -75,6 +75,10 @@ function FAQs() {
     <Header></Header>
 
     <h2></h2>
+    
+    
+    
+    
       <p style={{fontWeight : 'bold'}}>Q: Miről szól az oldalunk?</p>
       <p style={{fontWeight : 'bold'}}>A: Az oldalunk egy számítástechnikai alkatrészekkel foglalkozó oldal, ahol alkatrészenként, 
       vagy akár egyben megépítve várásolhatja meg számítógépét.</p>
@@ -82,18 +86,7 @@ function FAQs() {
       <p style={{fontWeight : 'bold'}}>Q: Miért minket válasszon?</p>
       <p style={{fontWeight : 'bold'}}>A: A piac egyik legkedvezőbb cége vagyunk, 
       és nálunk akár hozzáértés nélkül is megépítheti számítógépét, hisz rendszerünk mindenben asszisztálni fogja.</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
-      <p style={{fontWeight : 'bold'}}>                                                                                 </p>
-      <p style={{fontWeight : 'bold'}}>Q: What is this site about?</p>
-      <p style={{fontWeight : 'bold'}}>A: This site is for...</p>
+      
     </div>
     
   );
