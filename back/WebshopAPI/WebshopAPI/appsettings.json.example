@@ -1,0 +1,17 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "SQL": "Server=IP;Database=Webshop;User Id=user;Password=password;MultipleActiveResultSets=true;"
+  },
+  "JWT": {
+    "Key": "key",
+    "Audience": "audience",
+    "Issuer": "Issuer"
+  }
+}
