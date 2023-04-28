@@ -27,6 +27,11 @@ function MainPage() {
     window.location.href = "/login"
   }
 
+  const addproduct = (e) => {
+    e.preventDefault()
+    window.location.href = "/addproduct"
+  }
+
   const handleShow = (type) => {
     if (type === "cart") {
       setShowCart(true);
@@ -106,6 +111,7 @@ function MainPage() {
                 <Offcanvas.Body>
                 {/* Add your profile component here */}
                 <button className='asd1' type="button" style={{marginTop:'15px'}} onClick={logout}>Log Out</button>
+                <button className='asd1' type="button" style={{marginTop:'15px'}} onClick={addproduct}>Termék Hozzáadása</button>
               </Offcanvas.Body>
             </Offcanvas>
     </Navbar>

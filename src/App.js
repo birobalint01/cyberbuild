@@ -3,7 +3,7 @@ import Header from './Header';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes , Route, Link, Navigate } from 'react-router-dom';
 import Login from './Login';
-import Register from './register';
+import Register from './Register';
 import MainPage from './Mainpage';
 import FAQs from './components/FAQs';
 import CPUs from './components/CPUs';
@@ -13,6 +13,7 @@ import Motherbs from './components/Motherbs';
 import GPUs from './components/GPUs';
 import PSUs from './components/PSUs';
 import RAMs from './components/RAMs';
+import Addproduct from './components/Addproduct';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/cases" element={<Cases />} />
           <Route path="/psus" element={<PSUs />} />
           <Route path="/rams" element={<RAMs />} />
+          <Route path="/addproduct" element={<Addproduct />} />
           <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
       </div>
